@@ -14,6 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
+      fail-fast: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,6 +51,11 @@ jobs:
       - name: Build frontend
         run: npm run build
 
+      - name: Ensure build for tauri
+        run: |
+          # prefer build:web if present, otherwise fall back to build
+          npm run build:web --if-present || npm run build
+
       - name: Tauri Action - Build and publish
         uses: tauri-apps/tauri-action@v0
         with:
@@ -58,3 +64,4 @@ jobs:
         env:
           # ensure tauri doesn't try to re-run framework steps
           TAURI_SKIP_FRAMEWORK: '1'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
