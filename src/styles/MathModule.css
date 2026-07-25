@@ -1,0 +1,155 @@
+.math-module {
+  padding: 8px;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.tab {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  background: linear-gradient(to bottom, #082008, #001100);
+  border: 2px solid #00FF66;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab.active {
+  background: linear-gradient(to bottom, #00FF66, #008833);
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
+.tab-content {
+  padding: 8px;
+  background: #0D0D0D;
+  border: 1px solid #404040;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.input-group {
+  margin-bottom: 8px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 4px;
+  color: #00FF66;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 6px 8px;
+  background: #000000;
+  border: 2px solid #404040;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-compute {
+  padding: 8px 14px;
+  background: linear-gradient(to bottom, #008000, #004400);
+  border: 2px solid #00FF66;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.result-box,
+.result-terminal {
+  margin-top: 8px;
+  padding: 10px;
+  background: #000000;
+  border: 1px solid #00FF66;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.result-box code {
+  display: block;
+  margin-top: 4px;
+  color: #00FFFF;
+}
+
+.graph-container {
+  margin-top: 12px;
+  background: #000000;
+  padding: 8px;
+  border: 1px solid #00FF66;
+  height: 320px;
+}
+
+.graph-container canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.matrix-section {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.matrix-section label {
+  color: #00FF66;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.matrix-section select {
+  padding: 6px 8px;
+  background: #000000;
+  border: 2px solid #404040;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.matrix-section button {
+  padding: 8px 12px;
+  background: linear-gradient(to bottom, #008000, #004400);
+  border: 2px solid #00FF66;
+  color: #00FF66;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+}

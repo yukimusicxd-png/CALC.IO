@@ -1,0 +1,276 @@
+.notes-module-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  background: #0D0D0D;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  border: 2px solid;
+  border-color: #777777 #FFFFFF #FFFFFF #777777;
+  box-shadow: inset 1px 1px 0 #DFDFDF, inset -1px -1px 0 #404040;
+}
+
+.notes-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.notes-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #00FF66;
+  letter-spacing: 2px;
+}
+
+.notes-subtitle {
+  font-size: 11px;
+  color: #7FFF7F;
+}
+
+.notes-list-actions,
+.notes-editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.new-note-btn,
+.back-btn,
+.note-delete-btn,
+.export-btn {
+  background: #002200;
+  color: #00FF66;
+  border: 1px solid #00FF66;
+  padding: 8px 12px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.new-note-btn:hover,
+.back-btn:hover,
+.note-delete-btn:hover,
+.export-btn:hover {
+  background: #004400;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.note-card {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  border: 1px solid #00FF66;
+  padding: 12px;
+  gap: 10px;
+}
+
+.note-card-main {
+  background: transparent;
+  border: none;
+  color: #00FF66;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+}
+
+.note-card-title {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.note-card-meta {
+  font-size: 11px;
+  color: #7FFF7F;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.note-duplicate-btn,
+.note-delete-btn {
+  background: #002200;
+  color: #00FF66;
+  border: 1px solid #00FF66;
+  padding: 8px 12px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.note-duplicate-btn:hover,
+.note-delete-btn:hover {
+  background: #004400;
+}
+
+.note-title-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #080;
+  border: 1px solid #00FF66;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.notes-editor-frame {
+  flex: 1;
+  min-height: 480px;
+  background: #0D0D0D;
+  border: 2px solid;
+  border-color: #00FF66 #004400 #004400 #00FF66;
+  box-shadow: inset 1px 1px 0 #004400, inset -1px -1px 0 #00FF66;
+  overflow: hidden;
+}
+
+.notes-editor-view.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  padding: 20px;
+  background: rgba(13, 13, 13, 0.97);
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-editor-view.fullscreen .notes-editor-toolbar,
+.notes-editor-view.fullscreen .notes-editor-action-group {
+  z-index: 1001;
+}
+
+.notes-fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 18px;
+}
+
+.notes-fullscreen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #00FF66;
+  color: #00FF66;
+  font-size: 12px;
+}
+
+.notes-fullscreen-label {
+  letter-spacing: 1px;
+}
+
+.fullscreen-exit-btn,
+.fullscreen-btn {
+  background: #002200;
+  color: #00FF66;
+  border: 1px solid #00FF66;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.notes-editor-view.fullscreen .note-title-input {
+  margin-bottom: 12px;
+}
+
+.notes-editor-view.fullscreen .notes-editor-frame {
+  flex: 1;
+  min-height: 0;
+}
+
+.notes-editor-view.fullscreen .ql-container {
+  height: 100%;
+}
+
+.notes-fullscreen-body {
+  position: relative;
+  flex: 1;
+}
+
+.notes-editor-view.fullscreen .ql-editor {
+  min-height: 100%;
+}
+
+.notes-editor-frame .ql-container {
+  height: 100%;
+  background: #090909;
+  color: #00FF66;
+}
+
+.notes-editor-frame .ql-toolbar {
+  background: #111;
+  border: none;
+  border-bottom: 1px solid #00FF66;
+}
+
+.notes-editor-frame .ql-toolbar .ql-picker-label,
+.notes-editor-frame .ql-toolbar .ql-picker-item,
+.notes-editor-frame .ql-toolbar button {
+  color: #00FF66;
+}
+
+.notes-editor-frame .ql-editor {
+  min-height: 100%;
+  background: #090909;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+}
+
+.notes-editor-frame .ql-editor p {
+  margin: 0;
+}
+
+.notes-editor-frame .ql-toolbar .ql-stroke,
+.notes-editor-frame .ql-toolbar .ql-fill {
+  stroke: #00FF66;
+  fill: #00FF66;
+}
+
+.notes-editor-frame .ql-toolbar .ql-picker-options {
+  background: #111;
+}
+
+.notes-editor-frame .ql-snow .ql-toolbar button:hover,
+.notes-editor-frame .ql-snow .ql-toolbar .ql-picker-item:hover {
+  background: #004400;
+}
+
+.notes-editor-frame .ql-snow .ql-toolbar .ql-active {
+  background: #005500;
+}
+
+.notes-editor-frame .ql-snow .ql-toolbar .ql-picker-label {
+  color: #00FF66;
+}
+
+.notes-editor-frame .ql-snow .ql-tooltip {
+  color: #00FF66;
+  background: #111;
+}

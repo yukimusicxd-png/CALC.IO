@@ -1,0 +1,503 @@
+/* CALCULATOR MODULE - RETRO HEISEI AESTHETIC */
+
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #0D0D0D;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  padding: 12px;
+  gap: 12px;
+  overflow-y: auto;
+  border: 2px solid;
+  border-color: #777777 #FFFFFF #FFFFFF #777777;
+  box-shadow: inset 1px 1px 0 #DFDFDF, inset -1px -1px 0 #404040;
+}
+
+.calculator-container h2 {
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+/* Mode Toggle */
+.calc-mode-toggle {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.mode-btn {
+  padding: 6px 12px;
+  background: #1084D7;
+  color: #00FF66;
+  border: 2px solid;
+  border-color: #DFDFDF #404040 #404040 #DFDFDF;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.1s;
+}
+
+.mode-btn:active {
+  border-color: #404040 #DFDFDF #DFDFDF #404040;
+}
+
+.mode-btn.active {
+  background: #00FF66;
+  color: #0D0D0D;
+  font-weight: bold;
+}
+
+.angle-toggle {
+  padding: 6px 12px;
+  background: #1084D7;
+  color: #00FF66;
+  border: 2px solid;
+  border-color: #DFDFDF #404040 #404040 #DFDFDF;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: bold;
+  min-width: 80px;
+}
+
+.angle-toggle:active {
+  border-color: #404040 #DFDFDF #DFDFDF #404040;
+}
+
+.angle-toggle.DEG {
+  background: #FF6600;
+}
+
+/* ==================== SCIENTIFIC MODE ==================== */
+.scientific-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+/* LCD Display */
+.calc-display {
+  background: #000000;
+  border: 3px solid;
+  border-color: #404040 #DFDFDF #DFDFDF #404040;
+  padding: 12px;
+  box-shadow: inset 2px 2px 4px #000000;
+}
+
+.display-screen {
+  background: #0D0D0D;
+  color: #00FF66;
+  border: 1px solid #00FF66;
+  padding: 12px;
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+  min-height: 40px;
+  word-wrap: break-word;
+  box-shadow: inset 1px 1px 2px #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-scroll {
+  background: #0D0D0D;
+  color: #00AA00;
+  border: 1px solid #00AA00;
+  margin-top: 8px;
+  padding: 8px;
+  font-size: 10px;
+  max-height: 60px;
+  overflow-y: auto;
+  font-family: 'Courier New', monospace;
+}
+
+.history-line {
+  padding: 2px 0;
+  border-bottom: 1px dotted #00AA00;
+}
+
+.history-line:last-child {
+  border-bottom: none;
+}
+
+/* Keypad Grid */
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 8px;
+  background: #1a1a1a;
+  border: 2px solid;
+  border-color: #777777 #FFFFFF #FFFFFF #777777;
+  flex: 1;
+}
+
+/* Button Styles */
+.keypad-grid button {
+  padding: 12px;
+  border: 2px solid;
+  border-color: #DFDFDF #404040 #404040 #DFDFDF;
+  background: #C0C0C0;
+  color: #000000;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.05s;
+  box-shadow: 1px 1px 0 #FFFFFF inset, -1px -1px 0 #808080 inset;
+}
+
+.keypad-grid button:active {
+  border-color: #404040 #DFDFDF #DFDFDF #404040;
+  box-shadow: 1px 1px 0 #808080 inset, -1px -1px 0 #FFFFFF inset;
+}
+
+.key-num {
+  background: #C0C0C0;
+}
+
+.key-operator {
+  background: #1084D7;
+  color: #00FF66;
+  border-color: #00FF66 #1084D7 #1084D7 #00FF66;
+  font-weight: bold;
+}
+
+.key-operator:active {
+  border-color: #1084D7 #00FF66 #00FF66 #1084D7;
+}
+
+.key-func {
+  background: #008000;
+  color: #00FF66;
+  border-color: #00FF66 #008000 #008000 #00FF66;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.key-func:active {
+  border-color: #008000 #00FF66 #00FF66 #008000;
+}
+
+.key-const {
+  background: #800080;
+  color: #00FF66;
+  border-color: #00FF66 #800080 #800080 #00FF66;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.key-const:active {
+  border-color: #800080 #00FF66 #00FF66 #800080;
+}
+
+.key-equals {
+  background: #FF0000;
+  color: #FFFFFF;
+  border-color: #FFFFFF #FF0000 #FF0000 #FFFFFF;
+  font-size: 13px;
+  font-weight: bold;
+  grid-column: span 1;
+}
+
+.key-equals:active {
+  border-color: #FF0000 #FFFFFF #FFFFFF #FF0000;
+}
+
+/* Controls */
+.calc-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  flex: 1;
+  padding: 10px;
+  background: #00FF66;
+  color: #0D0D0D;
+  border: 2px solid;
+  border-color: #DFDFDF #404040 #404040 #DFDFDF;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: 1px 1px 0 #FFFFFF inset, -1px -1px 0 #808080 inset;
+}
+
+.btn-primary:active {
+  border-color: #404040 #DFDFDF #DFDFDF #404040;
+  box-shadow: 1px 1px 0 #808080 inset, -1px -1px 0 #FFFFFF inset;
+}
+
+.btn-secondary {
+  flex: 1;
+  padding: 10px;
+  background: #1084D7;
+  color: #00FF66;
+  border: 2px solid;
+  border-color: #DFDFDF #404040 #404040 #DFDFDF;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: 1px 1px 0 #FFFFFF inset, -1px -1px 0 #808080 inset;
+}
+
+.btn-secondary:active {
+  border-color: #404040 #DFDFDF #DFDFDF #404040;
+  box-shadow: 1px 1px 0 #808080 inset, -1px -1px 0 #FFFFFF inset;
+}
+
+/* Keyboard Shortcuts */
+.calc-shortcuts {
+  background: #0D0D0D;
+  color: #00AA00;
+  border: 1px solid #00AA00;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.calc-shortcuts strong {
+  display: block;
+  color: #00FF66;
+  margin-bottom: 6px;
+  font-size: 10px;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 6px;
+  color: #00AA00;
+}
+
+.shortcut-grid span {
+  padding: 3px 6px;
+  background: #1a1a1a;
+  border: 1px solid #00AA00;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.shortcut-grid code {
+  background: #0D0D0D;
+  color: #00FF66;
+  padding: 1px 3px;
+  border: 1px solid #00FF66;
+  margin: 0 2px;
+  font-weight: bold;
+}
+
+/* ==================== ADVANCED MODE ==================== */
+.advanced-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.advanced-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+}
+
+.advanced-input {
+  background: #0D0D0D;
+  color: #00FF66;
+  border: 2px solid;
+  border-color: #777777 #FFFFFF #FFFFFF #777777;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  resize: none;
+  box-shadow: inset 1px 1px 0 #DFDFDF, inset -1px -1px 0 #404040;
+  overflow-y: auto;
+}
+
+.advanced-input::placeholder {
+  color: #00AA00;
+  opacity: 0.5;
+}
+
+.advanced-output {
+  background: #0D0D0D;
+  color: #00FF66;
+  border: 2px solid;
+  border-color: #777777 #FFFFFF #FFFFFF #777777;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: inset 1px 1px 0 #DFDFDF, inset -1px -1px 0 #404040;
+}
+
+.result-box {
+  background: #1a1a1a;
+  color: #00FF66;
+  border: 1px solid #00FF66;
+  padding: 10px;
+  min-height: 80px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-weight: bold;
+  font-size: 13px;
+  word-wrap: break-word;
+}
+
+/* Variables Display */
+.variables-display {
+  background: #0D0D0D;
+  color: #00FF66;
+  border: 2px solid;
+  border-color: #777777 #FFFFFF #FFFFFF #777777;
+  padding: 12px;
+  max-height: 120px;
+  overflow-y: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.var-list {
+  background: #1a1a1a;
+  border: 1px solid #00FF66;
+  padding: 8px;
+  margin-top: 6px;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.var-item {
+  padding: 4px 0;
+  border-bottom: 1px dotted #00AA00;
+  color: #00FF66;
+}
+
+.var-item:last-child {
+  border-bottom: none;
+}
+
+.var-item code {
+  color: #00FF66;
+  background: #0D0D0D;
+  padding: 2px 4px;
+  border: 1px solid #00AA00;
+}
+
+/* Advanced Controls */
+.advanced-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.advanced-info {
+  background: #0D0D0D;
+  color: #00AA00;
+  border: 1px solid #00AA00;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.advanced-info strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #00FF66;
+}
+
+.advanced-info ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.advanced-info li {
+  margin: 3px 0;
+}
+
+.advanced-info code {
+  background: #1a1a1a;
+  color: #00FF66;
+  padding: 2px 4px;
+  border: 1px solid #00AA00;
+}
+
+/* Scrollbar styling */
+.calc-display::-webkit-scrollbar,
+.advanced-input::-webkit-scrollbar,
+.advanced-output::-webkit-scrollbar,
+.variables-display::-webkit-scrollbar,
+.var-list::-webkit-scrollbar,
+.advanced-info::-webkit-scrollbar,
+.history-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.calc-display::-webkit-scrollbar-track,
+.advanced-input::-webkit-scrollbar-track,
+.advanced-output::-webkit-scrollbar-track,
+.variables-display::-webkit-scrollbar-track,
+.var-list::-webkit-scrollbar-track,
+.advanced-info::-webkit-scrollbar-track,
+.history-scroll::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.calc-display::-webkit-scrollbar-thumb,
+.advanced-input::-webkit-scrollbar-thumb,
+.advanced-output::-webkit-scrollbar-thumb,
+.variables-display::-webkit-scrollbar-thumb,
+.var-list::-webkit-scrollbar-thumb,
+.advanced-info::-webkit-scrollbar-thumb,
+.history-scroll::-webkit-scrollbar-thumb {
+  background: #00AA00;
+  border: 1px solid #00FF66;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .advanced-display {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .keypad-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .keypad-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mode-btn, .angle-toggle {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}

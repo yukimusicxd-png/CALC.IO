@@ -1,0 +1,239 @@
+/* CALC.IO - RETRO HEISEI AESTHETIC */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #0D0D0D;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+.calc-io-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: #0D0D0D;
+  border: 3px solid;
+  border-color: #777777 #FFFFFF #FFFFFF #777777;
+  box-shadow: inset 1px 1px 0 #DFDFDF, inset -1px -1px 0 #404040;
+}
+
+.calc-io-container > div:first-child {
+  flex-shrink: 0;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  gap: 1px;
+  background: #0D0D0D;
+  padding: 2px;
+}
+
+.module-nav {
+  width: 140px;
+  background: linear-gradient(to bottom, var(--theme-dark, #000080), var(--theme-bright, #1084D7));
+  border: 2px solid;
+  border-color: #DFDFDF #404040 #404040 #DFDFDF;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.nav-header {
+  padding: 4px 6px;
+  background: linear-gradient(to right, var(--theme-dark, #000080), var(--theme-bright, #1084D7));
+  color: #00FF66;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #404040;
+  text-shadow: 1px 1px 0 #000000;
+}
+
+.nav-footer-spacer {
+  flex: 1;
+}
+
+.options-btn {
+  margin-top: auto;
+}
+
+.module-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-align: left;
+}
+
+.module-btn:hover {
+  background: rgba(0, 255, 102, 0.1);
+  border-color: #00FF66;
+}
+
+.module-btn.active {
+  background: linear-gradient(to right, var(--theme-bright, #1084D7), #DFDFDF);
+  color: #000000;
+  border: 1px solid #DFDFDF;
+}
+
+.module-btn .icon {
+  font-size: 14px;
+  min-width: 16px;
+}
+
+.module-content {
+  flex: 1;
+  overflow: auto;
+  background: #0D0D0D;
+  border: 2px solid;
+  border-color: #DFDFDF #404040 #404040 #DFDFDF;
+  padding: 8px;
+}
+
+.module-header {
+  margin-bottom: 8px;
+  padding: 4px;
+  background: linear-gradient(to right, var(--theme-dark, #000080), var(--theme-bright, #1084D7));
+  border: 1px solid #404040;
+  border-top: 1px solid #DFDFDF;
+  border-left: 1px solid #DFDFDF;
+}
+
+.module-header h2 {
+  color: #00FF66;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #000000;
+}
+
+.tabs {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 4px 8px;
+  background: linear-gradient(to bottom, #DFDFDF, #808080);
+  border: 2px solid;
+  border-color: #DFDFDF #404040 #404040 #DFDFDF;
+  color: #000000;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: linear-gradient(to bottom, #00FF66, #008833);
+  color: #000000;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+}
+
+.tab-content {
+  padding: 8px;
+  background: #0D0D0D;
+  border: 1px solid #404040;
+}
+
+.input-group {
+  margin-bottom: 8px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 2px;
+  color: #00FF66;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 4px;
+  background: #000000;
+  border: 2px solid;
+  border-color: #404040 #DFDFDF #DFDFDF #404040;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.btn-compute {
+  padding: 6px 12px;
+  background: linear-gradient(to bottom, #008000, #004400);
+  border: 2px solid;
+  border-color: #00FF66 #000000 #000000 #00FF66;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.result-box {
+  margin-top: 8px;
+  padding: 6px;
+  background: #000000;
+  border: 1px solid #00FF66;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  overflow-x: auto;
+}
+
+.result-terminal {
+  margin-top: 8px;
+  padding: 6px;
+  background: #000000;
+  border: 1px solid #00FF66;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+code, pre {
+  background: #000000;
+  color: #00FFFF;
+  padding: 2px 4px;
+}
+
+pre {
+  padding: 6px;
+  overflow-x: auto;
+}
+
+.calc-io-container > div:last-child {
+  flex-shrink: 0;
+}

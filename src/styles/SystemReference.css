@@ -1,0 +1,158 @@
+.system-reference {
+  padding: 8px;
+}
+
+.reference-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  height: 100%;
+}
+
+.search-section {
+  grid-column: 1 / -1;
+  margin-bottom: 8px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 4px;
+  background: #000000;
+  border: 2px solid;
+  border-color: #404040 #DFDFDF #DFDFDF #404040;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.constants-list {
+  overflow-y: auto;
+  border: 1px solid #00FF66;
+  background: #000000;
+}
+
+.constants-list h3 {
+  color: #00FF66;
+  padding: 6px;
+  background: linear-gradient(to right, #000080, #1084D7);
+  font-size: 11px;
+  font-weight: bold;
+  border-bottom: 1px solid #00FF66;
+}
+
+.list-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.constant-item {
+  padding: 6px;
+  border-bottom: 1px solid #404040;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.constant-item:hover {
+  background: rgba(0, 255, 102, 0.1);
+}
+
+.constant-item.active {
+  background: #003300;
+  border-left: 2px solid #00FF66;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.item-header .name {
+  color: #00FF66;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.item-header .symbol {
+  color: #00FFFF;
+  font-size: 9px;
+}
+
+.item-value {
+  color: #00FFFF;
+  font-size: 9px;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.constant-detail {
+  border: 1px solid #00FF66;
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-header {
+  background: linear-gradient(to right, #000080, #1084D7);
+  padding: 6px;
+  border-bottom: 1px solid #00FF66;
+}
+
+.detail-header h3 {
+  color: #00FF66;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.detail-content {
+  padding: 8px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.detail-row .label {
+  color: #00FFFF;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.detail-row .value {
+  color: #00FF66;
+  font-size: 11px;
+}
+
+.detail-row .mono {
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+}
+
+.copy-button {
+  margin-top: 8px;
+  border-top: 1px solid #404040;
+  padding-top: 8px;
+}
+
+.copy-button button {
+  width: 100%;
+  padding: 6px 12px;
+  background: linear-gradient(to bottom, #008000, #004400);
+  border: 2px solid;
+  border-color: #00FF66 #000000 #000000 #00FF66;
+  color: #00FF66;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}

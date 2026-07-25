@@ -1,0 +1,60 @@
+.footer-statusbar {
+  display: flex;
+  gap: 12px;
+  padding: 3px 6px;
+  background: #C0C0C0;
+  border-top: 1px solid #DFDFDF;
+  border-bottom: 1px solid #404040;
+  font-size: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #000000;
+}
+
+.status-section {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.status-section.separator {
+  color: #808080;
+  opacity: 0.6;
+}
+
+.screensaver-launch-btn {
+  padding: 4px 8px;
+  border: 2px solid #000000;
+  background: linear-gradient(to right, #111111, #333333);
+  color: #00AA00;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.screensaver-launch-btn:hover {
+  background: linear-gradient(to right, #222222, #555555);
+  transform: translateY(-1px);
+}
+
+.screensaver-section {
+  margin-left: auto;
+}
+
+.status-icon {
+  color: #00AA00;
+  font-weight: bold;
+}
+
+.status-label {
+  font-weight: bold;
+  color: #000080;
+}
+
+.status-text {
+  color: #000000;
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
+}
