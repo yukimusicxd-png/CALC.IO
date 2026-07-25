@@ -1,3 +1,6 @@
+[![Latest Release](https://img.shields.io/github/v/release/YOUR_USERNAME/YOUR_REPO?color=blue&label=Download%20CALC.IO)](https://github.com/YOUR_USERNAME/YOUR_REPO/releases/latest)
+[![Total Downloads](https://img.shields.io/github/downloads/YOUR_USERNAME/YOUR_REPO/total?color=green)](https://github.com/YOUR_USERNAME/YOUR_REPO/releases)
+
 # CALC.IO — Retro STEM Workstation
 
 ## Download (Latest Release)
