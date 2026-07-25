@@ -61,6 +61,7 @@ jobs:
         with:
           # tauri-action will read the tag and create a GitHub Release with artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          tauriScript: npx tauri
         env:
           # ensure tauri doesn't try to re-run framework steps
           TAURI_SKIP_FRAMEWORK: '1'
