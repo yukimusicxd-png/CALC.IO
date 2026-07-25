@@ -10,6 +10,8 @@ on:
 jobs:
   release:
     name: Build and release
+    permissions:
+      contents: write
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -61,6 +63,8 @@ jobs:
         with:
           # tauri-action will read the tag and create a GitHub Release with artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          tagName: ${{ github.ref_name }}
+          releaseName: 'CALC.IO v__VERSION__'
           tauriScript: npx tauri
         env:
           # ensure tauri doesn't try to re-run framework steps
