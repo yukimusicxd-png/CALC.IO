@@ -8,9 +8,9 @@ Find the latest prebuilt binaries and installers on the GitHub Releases page:
 
 | Platform | Latest Release |
 |---:|:---|
-| macOS | [Download (DMG)](https://github.com/yukimusicxd-png/CALC.IO/releases/latest) |
-| Windows | [Download (MSI / EXE)](https://github.com/yukimusicxd-png/CALC.IO/releases/latest) |
-| Linux | [Download (AppImage / DEB)](https://github.com/yukimusicxd-png/CALC.IO/releases/latest) |
+| macOS | [Download (DMG)](https://github.com/yukimusicxd-png/CALC.IO/releases/tag/v1.0.1) |
+| Windows | [Download (MSI / EXE)](https://github.com/yukimusicxd-png/CALC.IO/releases/tag/v1.0.1) |
+| Linux | [Download (AppImage / DEB)](https://github.com/yukimusicxd-png/CALC.IO/releases/tag/v1.0.1) |
 
 ---
 
