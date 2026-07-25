@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - 'v*'
+  release:
+    types: [published]
 
 jobs:
   release:
@@ -49,7 +51,7 @@ jobs:
         run: npm run build
 
       - name: Tauri Action - Build and publish
-        uses: tauri-apps/tauri-action@v2
+        uses: tauri-apps/tauri-action@v0
         with:
           # tauri-action will read the tag and create a GitHub Release with artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
