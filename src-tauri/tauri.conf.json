@@ -25,18 +25,14 @@
   },
   "bundle": {
     "active": true,
-    "targets": ["dmg", "msi", "appimage", "deb"],
-    "identifier": "com.calc.io.app",
+    "targets": "all",
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/icon.icns",
       "icons/icon.ico"
     ],
-    "resources": [],
-    "deb": {
-      "depends": []
-    }
+    "resources": []
   },
   "plugins": {
     "updater": {
