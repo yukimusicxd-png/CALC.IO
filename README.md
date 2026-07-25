@@ -44,6 +44,18 @@ The app ships as a web front-end and can be packaged as a native desktop applica
 - Native Packaging: Tauri
 - Build / CI: GitHub Actions
 
+## Screenshots
+<img width="1710" height="1107" alt="Screenshot 2026-07-25 at 11 29 23 PM" src="https://github.com/user-attachments/assets/d8852ffd-7c70-4d94-908f-011d2c6f5e6f" />
+<img width="1710" height="1107" alt="Screenshot 2026-07-25 at 11 29 06 PM" src="https://github.com/user-attachments/assets/73a3529d-823f-41df-8193-7c35fd6c4306" />
+<img width="1710" height="1107" alt="Screenshot 2026-07-25 at 11 28 59 PM" src="https://github.com/user-attachments/assets/65cb9d92-5aff-4af7-93f1-9cb4d3a6a3d5" />
+<img width="1710" height="1107" alt="Screenshot 2026-07-25 at 11 28 26 PM" src="https://github.com/user-attachments/assets/c560b3be-9e01-442f-ba27-3ab00ff0b5ef" />
+<img width="1710" height="1107" alt="Screenshot 2026-07-25 at 11 28 18 PM" src="https://github.com/user-attachments/assets/3fa030c1-efc7-4620-b1f5-aad6b9a03345" />
+<img width="1710" height="1107" alt="Screenshot 2026-07-25 at 11 28 12 PM" src="https://github.com/user-attachments/assets/16261011-5f09-4138-a819-f87759bc47c0" />
+<img width="1710" height="1107" alt="Screenshot 2026-07-25 at 11 28 06 PM" src="https://github.com/user-attachments/assets/4ad5e855-4d70-43b8-a214-f6ea4a4982ef" />
+<img width="1710" height="1107" alt="Screenshot 2026-07-25 at 11 27 59 PM" src="https://github.com/user-attachments/assets/f81eb2c4-ec70-45af-9c0d-9de092030c15" />
+<img width="1710" height="1107" alt="Screenshot 2026-07-25 at 11 27 52 PM" src="https://github.com/user-attachments/assets/88534709-fd1b-492c-b617-54b4f824d69e" />
+
+
 ## Development
 Install dependencies and run the dev server:
 
