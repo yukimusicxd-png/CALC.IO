@@ -14,6 +14,13 @@ Find the latest prebuilt binaries and installers on the GitHub Releases page:
 
 ---
 
+Note for macOS Users:
+If macOS says "CALC.IO is damaged and can't be opened", open Terminal and run:
+xattr -cr /Applications/CALC.IO.app
+For a visual step-by-step walkthrough on fixing this issue, check out this guide on How to Fix App is damaged and can't be opened Error on Mac. It demonstrates how to clear the Gatekeeper quarantine flag so third-party software runs smoothly.
+
+---
+
 ## Project Overview
 CALC.IO is a retro-styled, single-page STEM workstation built with modern web and native packaging tools. It combines interactive math, physics, chemistry, and geographic utilities with a nostalgic terminal aesthetic and a versatile plugin architecture.
 
